@@ -1,0 +1,215 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  height: 100%;
+  width: 100%;
+  background-color: hsl(223, 19%, 93%);
+  font-family: "Rubik", sans-serif;
+}
+.container {
+  background-color: hsl(228, 33%, 97%);
+  width: 1000px;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 30px;
+}
+.comment {
+  background-color: hsl(223, 33%, 97%);
+  width: 600px;
+  margin: 20px auto;
+  position: relative;
+}
+.replycomment {
+  width: 500px;
+  margin-left: 100px;
+}
+.authorcom {
+  width: 600px;
+  margin: 20px auto;
+  position: relative;
+}
+.repl-com {
+  width: 500px;
+  margin-left: 100px;
+}
+
+.wrap-out {
+  margin-top: 20px;
+  height: 150px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 7px;
+}
+.entry {
+  margin-top: 50px;
+}
+.score {
+  background-color: hsl(223, 19%, 93%);
+  width: 30px;
+  height: 90px;
+  border-radius: 10px;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 15px;
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.person {
+  margin-left: 50px;
+  display: inline;
+  width: 300px;
+}
+.person-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.namer,
+.dater {
+  margin-top: 10px;
+  margin-right: 40px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.namer {
+  font-weight: bold;
+}
+.date,
+.commentary {
+  color: gray;
+}
+.you {
+  width: 30px;
+  background-color: blueviolet;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+}
+#user {
+  width: 30px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.delete {
+  display: flex;
+}
+.exp {
+  cursor: pointer;
+}
+.change {
+  margin-top: 25px;
+  margin-right: 10px;
+  height: 20px;
+}
+.reply {
+  display: inline;
+  cursor: pointer;
+  color: hsl(238, 40%, 52%);
+  font-weight: bold;
+  font-size: 14px;
+}
+.reply-bt {
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(238, 40%, 52%);
+  cursor: pointer;
+}
+.delete-bt {
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(358, 79%, 66%);
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+.edit-bt {
+  border: none;
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(238, 40%, 52%);
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+}
+.commentary {
+  margin: 10px 20px 10px 25px;
+  font-size: 14px;
+}
+/* style for new comment writing box and author  */
+.author {
+  background-color: hsl(0, 0%, 100%);
+  width: 600px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 7px;
+}
+#prof {
+  position: absolute;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 10px;
+  width: 30px;
+  cursor: pointer;
+}
+#comTxt {
+  margin-top: 15px;
+  margin-left: 75px;
+  border: 0.1px solid beige;
+}
+.author-input {
+  width: 400px;
+  height: 70px;
+}
+.btn {
+  width: 80px;
+  height: 35px;
+  background-color: hsl(238, 40%, 52%);
+  color: hsl(0, 0%, 100%);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 15px;
+  margin-left: 20px;
+}
+/* popup */
+.popup-wrapper {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.popup {
+  width: 100%;
+  max-width: 300px;
+  margin: 10% auto;
+  padding: 20px;
+  background: white;
+  position: relative;
+  border-radius: 10px;
+}
+.popup-no {
+  cursor: pointer;
+  color: white;
+  background-color: hsl(220, 1%, 43%);
+  width: 130px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+  margin-right: 10px;
+}
+.popup-ok {
+  cursor: pointer;
+  color: white;
+  background-color: hsl(358, 79%, 66%);
+  width: 130px;
+  height: 40px;
+  border: none;
+  border-radius: 7px;
+}
+.pop-div {
+  text-align: center;
+}

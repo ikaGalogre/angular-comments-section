@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="author-1">
+    <div class="author">
+      <img
+        src="../../../../assets/images/avatars/image-juliusomo.png"
+        id="prof"
+        alt="iconpic"
+      />
+      <input
+        id="comTxt"
+        class="author-input"
+        formControlName="title"
+        placeholder="Add a comment..."
+      />
+      <button class="btn Comment-form-Button" type="submit" id="button">
+        {{ submitLabel }}
+      </button>
+    </div>
+  </div>
+</form>
