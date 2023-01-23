@@ -64,16 +64,18 @@
       ]
     },
     {
-      "content": "m,sd",
       "id": 3,
+      "content": "obolashvili",
       "user": {
-        "image": {
-          "png": "./images/avatars/image-juliusomo.png",
-          "webp": "./images/avatars/image-juliusomo.webp"
-        },
-        "username": "juliusomo"
+        "content": "dkjd",
+        "id": null,
+        "username": "juliusomo",
+        "createdAt": "2023-01-21T23:11:21.241Z"
       },
-      "createdAt": "1/23, 2:16 AM"
+      "createdAt": "1/24, 2:18 AM",
+      "replies": [],
+      "score": 0,
+      "replyingTo": ""
     }
   ]
 }

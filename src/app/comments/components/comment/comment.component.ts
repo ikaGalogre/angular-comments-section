@@ -15,7 +15,6 @@ export class CommentComponent {
     id: number | null;
   }>();
 
-  replyId: number | null = null;
   canReply: boolean = false;
   showReplyForm: boolean = false;
   showEditForm = false;

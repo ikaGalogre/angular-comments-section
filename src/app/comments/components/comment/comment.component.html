@@ -48,17 +48,14 @@
         <img src="../../../../assets/images/icon-reply.svg" alt="reply" />
         <button class="reply-bt" id="x">Reply</button>
       </div>
-      <div
-        *ngIf="comment.user.username == 'juliusomo'"
-        (click)="deleteComment.emit(comment.id)"
-        (click)="togglePopup()"
-        class="delete"
-      >
+      <div *ngIf="comment.user.username == 'juliusomo'" class="delete">
         <img src="../../../../assets/images/icon-delete.svg" alt="reply" />
-        <button class="delete-bt" id="x">Delete</button>
-        <div (click)="toggleEditForm()">
+        <button (click)="togglePopup()" class="delete-bt" id="x">Delete</button>
+        <div>
           <img src="../../../../assets/images/icon-edit.svg" alt="reply" />
-          <button class="edit-bt" id="x">Edit</button>
+          <button (click)="toggleEditForm()" class="edit-bt" id="x">
+            Edit
+          </button>
         </div>
       </div>
     </div>
@@ -71,13 +68,14 @@
 <comment-form
   *ngIf="showReplyForm"
   submitLabel="reply"
-  (handleSubmit)="addComment.emit({ text: $event, id: replyId })"
+  (handleSubmit)="addComment.emit({ text: $event, id: comment.id })"
 ></comment-form>
 <comment-form
   *ngIf="showEditForm"
   submitLabel="update"
-  (handleSubmit)="updateComment.emit({ text: $event, id: commentId })"
+  (handleSubmit)="updateComment.emit({ text: $event, id: comment.id })"
 ></comment-form>
+
 <!-- thees are comment replies from data -->
 <div class="replycomment comment">
   <div class="wrap-out replies" *ngFor="let reply of comment.replies">
@@ -126,11 +124,7 @@
           <img src="../../../../assets/images/icon-reply.svg" alt="reply" />
           <button class="reply-bt" id="x">Reply</button>
         </div>
-        <div
-          *ngIf="reply.user.username == 'juliusomo'"
-          (click)="deleteComment.emit(reply.id)"
-          class="delete"
-        >
+        <div *ngIf="reply.user.username == 'juliusomo'" class="delete">
           <img src="../../../../assets/images/icon-delete.svg" alt="reply" />
           <button class="delete-bt" id="x">Delete</button>
           <div (click)="toggleEditForm()">
@@ -141,7 +135,10 @@
       </div>
     </div>
     <div class="commentary">
-      <p class="commentary">{{ reply.content }}</p>
+      <p class="commentary">
+        <span class="repname">@{{ reply.replyingTo }}</span
+        >{{ reply.content }}
+      </p>
     </div>
   </div>
 </div>
@@ -152,8 +149,14 @@
       <h2>Delete comment</h2>
       <p>Are you sure you want to delete?</p>
       <div class="pop-div">
-        <button class="popup-no" (click)="showPopup = false">No, CANCEL</button>
-        <button class="popup-ok" (click)="onDelete()">YES, DELETE</button>
+        <button class="popup-no" (click)="togglePopup()">No, CANCEL</button>
+        <button
+          (click)="deleteComment.emit(comment.id)"
+          class="popup-ok"
+          (click)="onDelete()"
+        >
+          YES, DELETE
+        </button>
       </div>
     </div>
   </div>

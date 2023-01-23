@@ -4,14 +4,11 @@
       class="coments-container"
       *ngFor="let comment of comments"
       [comment]="comment"
-      (addComment)="addComment($event)"
+      (addComment)="addReply($event)"
       (deleteComment)="deleteComment($event)"
     >
     </comment>
   </div>
-  <div class="replycomment comment"></div>
-  <div class="comment author-replied"></div>
-  <div class="authorcom"></div>
 
   <comment-form
     submitLabel="send"

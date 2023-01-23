@@ -10,26 +10,30 @@ export class CommentsService {
   getComments(): Observable<Comment[]> {
     return this.httpClient.get<Comment[]>('http://localhost:3000/comments');
   }
-  createComment(text: string, id: null | number): Observable<Comment> {
-    return this.httpClient.post<Comment>('http://localhost:3000/comments', {
-      content: text,
-      id,
-      user: {
-        image: {
-          png: './images/avatars/image-juliusomo.png',
-          webp: './images/avatars/image-juliusomo.webp',
-        },
-        username: 'juliusomo',
-      },
-      createdAt: new Date().toLocaleString('en-US', {
-        month: 'numeric',
-        day: 'numeric',
-        hour: 'numeric',
-        minute: 'numeric',
-      }),
-    });
+  createComment(body: Comment): Observable<Comment> {
+    return this.httpClient.post<Comment>(
+      'http://localhost:3000/comments',
+      body
+    );
   }
   deleteComment(id: number): Observable<{}> {
     return this.httpClient.delete(`http://localhost:3000/comments/${id}`);
   }
+
+  updateCommentToAddReply(id: number, body: Comment): Observable<Comment> {
+    return this.httpClient.put<Comment>(
+      `http://localhost:3000/comments/${id}`,
+      body
+    );
+  }
+
+  getCurrentUser(): Observable<User> {
+    return this.httpClient.get<User>('http://localhost:3000/currentUser');
+  }
+  // updateComment(id: number, comment: any) {
+  //   return this.httpClient.put(
+  //     `{http://localhost:3000/comments/${id}}`,
+  //     comment
+  //   );
+  // }
 }
