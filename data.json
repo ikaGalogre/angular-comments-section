@@ -18,7 +18,22 @@
         },
         "username": "amyrobson"
       },
-      "replies": []
+      "replies": [
+        {
+          "id": 0,
+          "content": "nmmnm",
+          "score": 0,
+          "user": {
+            "content": "dkjd",
+            "id": null,
+            "username": "juliusomo",
+            "createdAt": "2023-01-21T23:11:21.241Z"
+          },
+          "createdAt": "1/24, 12:40 PM",
+          "replies": [],
+          "replyingTo": "juliosomo"
+        }
+      ]
     },
     {
       "id": 2,
@@ -65,14 +80,14 @@
     },
     {
       "id": 3,
-      "content": "obolashvili",
+      "content": "d",
       "user": {
         "content": "dkjd",
         "id": null,
         "username": "juliusomo",
         "createdAt": "2023-01-21T23:11:21.241Z"
       },
-      "createdAt": "1/24, 2:18 AM",
+      "createdAt": "1/24, 12:41 PM",
       "replies": [],
       "score": 0,
       "replyingTo": ""

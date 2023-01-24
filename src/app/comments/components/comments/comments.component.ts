@@ -80,9 +80,14 @@ export class CommentsComponent implements OnInit {
       );
     });
   }
-  handleUpdateComment(id: number, updatedText: string) {}
 
-  // togglePopup() {
-  //   this.showPopup = !this.showPopup;
-  // }
+  handleUpdateComment(id: number, updatedText: string) {
+    const mainCcomment = this.comments.find((c) => c.id === id);
+    if (mainCcomment && id) {
+      mainCcomment?.content:  what
+        
+    this.commentsService.updateComment(id, mainCcomment).subscribe();
+    mainCcomment?.replies.sort((a, b) => b.score - a.score);
+    this.c++;
+  }
 }
