@@ -6,6 +6,8 @@
       [comment]="comment"
       (addComment)="addReply($event)"
       (deleteComment)="deleteComment($event)"
+      (updateComment)="handleUpdateComment($event)"
+      (deleteReplyEvent)="deleteReplyHandler($event)"
     >
     </comment>
   </div>

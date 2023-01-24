@@ -81,13 +81,36 @@ export class CommentsComponent implements OnInit {
     });
   }
 
-  handleUpdateComment(id: number, updatedText: string) {
+  handleUpdateComment({ text, id }: { text: string; id: number }) {
     const mainCcomment = this.comments.find((c) => c.id === id);
     if (mainCcomment && id) {
-      mainCcomment?.content:  what
-        
-    this.commentsService.updateComment(id, mainCcomment).subscribe();
-    mainCcomment?.replies.sort((a, b) => b.score - a.score);
-    this.c++;
+      mainCcomment.content = text;
+      this.commentsService.updateComment(id, mainCcomment).subscribe();
+      mainCcomment?.replies.sort((a, b) => b.score - a.score);
+      this.c++;
+    }
+  }
+
+  deleteReplyHandler(obj: any) {
+    const mainComment = this.comments.find((e) => e.id === obj.mainCommentId);
+    if (mainComment) {
+      mainComment.replies = mainComment.replies.filter(
+        (e) => e.id !== obj.replyId
+      );
+    }
+    this.commentsService
+      .updateComment(obj.mainCommentId, mainComment)
+      .subscribe();
+  }
+  editReplyHandler(obj: any) {
+    // const mainComment = this.comments.find((e) => e.id === obj.mainCommentId);
+    // if (mainComment) {
+    //   mainComment.replies = mainComment.replies.filter(
+    //     (e) => e.id !== obj.replyId
+    //   );
+    // }
+    // this.commentsService
+    //   .updateComment(obj.mainCommentId, mainComment)
+    //   .subscribe();
   }
 }

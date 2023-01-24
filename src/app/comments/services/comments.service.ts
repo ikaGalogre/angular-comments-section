@@ -31,9 +31,6 @@ export class CommentsService {
     return this.httpClient.get<User>('http://localhost:3000/currentUser');
   }
   updateComment(id: number, comment: any) {
-    return this.httpClient.put(
-      `{http://localhost:3000/comments/${id}}`,
-      comment
-    );
+    return this.httpClient.put(`http://localhost:3000/comments/${id}`, comment);
   }
 }

@@ -65,6 +65,7 @@
   </div>
   <div class=""></div>
 </div>
+
 <comment-form
   *ngIf="showReplyForm"
   submitLabel="reply"
@@ -73,7 +74,7 @@
 <comment-form
   *ngIf="showEditForm"
   submitLabel="update"
-  (handleSubmit)="updateComment.emit({ text: $event, id: comment.id })"
+  (handleSubmit)="updateCommentEmitter({ text: $event, id: comment.id })"
 ></comment-form>
 
 <!-- thees are comment replies from data -->
@@ -126,10 +127,19 @@
         </div>
         <div *ngIf="reply.user.username == 'juliusomo'" class="delete">
           <img src="../../../../assets/images/icon-delete.svg" alt="reply" />
-          <button class="delete-bt" id="x">Delete</button>
-          <div (click)="toggleEditForm()">
+          <button (click)="deleteReply(reply.id)" class="delete-bt" id="x">
+            Delete
+          </button>
+          <div>
             <img src="../../../../assets/images/icon-edit.svg" alt="reply" />
-            <button class="edit-bt" id="x">Edit</button>
+            <button
+              (click)="editReply(reply.id)"
+              (click)="toggleReplyEditForm()"
+              class="edit-bt"
+              id="x"
+            >
+              Edit
+            </button>
           </div>
         </div>
       </div>
